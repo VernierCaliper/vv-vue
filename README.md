@@ -1,30 +1,64 @@
 # vv-view
+### 目前只有一个swiper组件，将会持续更新各种常用组件
+## 安装
+npm install vue-yequan-swiper --save
 
-> A Vue.js project
+cnpm install vue-yequan-swiper --save //淘宝镜像
 
-## Build Setup
+### 使用
+ * 1.引用
+  > main.js
+ ```
+  import vvView from 'vv-vue'
+  
+  import '../node_modules/vv-vue/dist/style.css'
+  
+  Vue.use(vvView);
+ ```
+ * 2.使用
+ > html
+ ```
+ //swiper用法
+ <swiper :options="options">
+     <slide v-for="(item,index) in list" :key="item.id"
+            v-bind:style="{background:'url('+ item.img +') no-repeat center / cover'}">
+     </slide>
+ </swiper> //注：我个人习惯使用背景图片，也可以在slide之间写你自己的代码
+ ```
+ * 3.添加options
+ > JavaScript
+  ``` data () {
+    return {
+        list:[
+          {
+            img:'/static/list1.jpg',
+            id:1
+          },
+          {
+            img:'/static/list2.jpg',
+            id:2
+          },
+          {
+            img:'/static/list3.jpg',
+            id:3
+          }
+        ],
+        options:{
+            autoplay:true,//是否自动播放，默认true
+            duration:500,//过度时长，单位ms,默认500
+            interval:2000,//自动播放间隔时长，单位ms,默认2500
+            showPagenation:true,//是否显示index dots,默认true
+            notActiveClass:'',//index dots 的类名，默认使用的是yq_pagenation_item，可添加自己的类名，记得使用！important覆盖我的样式，但请注意style如果使用了scope,那么css样式不会生效，但class依然会添加
+            activeClass:'yq_swiper_active',//index dots 当前的类名，默认yq_swiper_active
+            index:1,//加载默认显示的第一张slide，默认1
+        },
+      }
+      }
+  ```
+### 截图
 
-``` bash
-# install dependencies
-npm install
+![效果](https://s22.postimg.cc/58fehx4a9/20180623135356.png)
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 当然你也可以直接clone本项目，在本地运行查看
+* 1.npm install //建议使用cnpm安装依赖
+* 2.npm run dev
