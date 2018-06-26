@@ -1,9 +1,9 @@
 # vv-view
 ### 目前只有一个swiper组件，将会持续更新各种常用组件
 ## 安装
-npm install vue-yequan-swiper --save
+npm install vv-vue --save
 
-cnpm install vue-yequan-swiper --save //淘宝镜像
+cnpm install vv-vue --save //淘宝镜像
 
 ### 使用
  * 1.引用
