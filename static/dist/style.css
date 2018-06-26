@@ -1,0 +1,47 @@
+
+.yq_content {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.yq_swiper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+}
+.yq_pagenation {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  background: 0 0;
+}
+.yq_pagenation_item {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px 7px;
+  cursor: pointer;
+  border-radius: 100%;
+  background: #eeeeee;
+}
+.yq_pagenation_item.yq_swiper_active {
+  background: #0fc37c!important;
+}
+
+.yq_slide {
+  width: 100%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  z-index: 10;
+  height: 100%;
+}
+.yq_slide img {
+  display: block;
+}
