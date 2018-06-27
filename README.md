@@ -1,5 +1,5 @@
 # vv-view
-### 目前只有一个swiper组件，将会持续更新各种常用组件
+### 目前有swiper轮播组件、月份选择、loading加载动画、toast提示信息组件，将会持续更新各种常用组件
 ## 安装
 npm install vv-vue --save
 
@@ -24,10 +24,16 @@ cnpm install vv-vue --save //淘宝镜像
             v-bind:style="{background:'url('+ item.img +') no-repeat center / cover'}">
      </slide>
  </swiper> //注：我个人习惯使用背景图片，也可以在slide之间写你自己的代码
+ //月份选择组件
+ <date @selectDate="picked">
+
+ </date>
  ```
  * 3.添加options
  > JavaScript
-  ``` data () {
+  ```
+  //swiper用法 
+  data () {
     return {
         list:[
           {
@@ -54,6 +60,33 @@ cnpm install vv-vue --save //淘宝镜像
         },
       }
       }
+  //月份选择
+    data () {
+      return {
+        freeMon:''
+        }
+      },
+    methods:{
+      picked:function (res) {
+        //res为返回的所选择的日期
+        this.freeMon = res
+      }
+    },
+    //loading动画
+      this.$loading()//开启动画
+      this.$loading['close']()//关闭动画
+    //toast提示框
+    你可以直接调用下面的方法
+    this.$toast('message') //默认显示位置为center
+    或者
+    this.$toast[type]('message',duration)
+    type string,控制toast提示显示位置，默认为'center'
+    type->'top'显示在顶部
+    type->'center'显示在中央
+    type->'bottom'显示在底部
+    
+    duration number,提示信息消失时间,默认为2500
+    
   ```
 ### 截图
 

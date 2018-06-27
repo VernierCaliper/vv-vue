@@ -173,43 +173,5 @@
 </script>
 
 <style>
-  .yq_content {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-  }
-  .yq_swiper {
-    width: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100%;
-    -moz-transition-duration: 0s;
-    -webkit-transition-duration: 0s;
-    -o-transition-duration: 0s;
-    transition-duration: 0s;
-  }
-  .yq_pagenation {
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-    background: 0 0;
-  }
-  .yq_pagenation_item {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin: 1px 7px;
-    cursor: pointer;
-    border-radius: 100%;
-    background: #eeeeee;
-  }
-  .yq_pagenation_item.yq_swiper_active {
-    background: #0fc37c!important;
-  }
+ @import "../assets/css/swiper.css";
 </style>

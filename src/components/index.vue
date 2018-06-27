@@ -5,6 +5,24 @@
              v-bind:style="{background:'url('+ item.img +') no-repeat center / cover'}">
       </slide>
     </swiper>
+    <date @selectDate="picked">
+
+    </date>
+    <!--<fold>-->
+      <!--<fold-header slot="header">-->
+        <!--<template scope="props">-->
+          <!--<p>{{props.test}}</p>-->
+        <!--</template>-->
+      <!--</fold-header>-->
+      <!--<fold-list slot="list">-->
+        <!--<span>这是一大段测试问本</span>-->
+        <!--<span>这是一大段测试问本</span>-->
+        <!--<span>这是一大段测试问本</span>-->
+        <!--<span>这是一大段测试问本</span>-->
+        <!--<span>这是一大段测试问本</span>-->
+        <!--<span>这是一大段测试问本</span>-->
+      <!--</fold-list>-->
+    <!--</fold>-->
   </div>
 </template>
 
@@ -35,7 +53,20 @@ export default {
           img:'/static/list3.jpg',
           id:3
         }
-      ]
+      ],
+      freeMon:'',
+    }
+  },
+  mounted:function () {
+    this.$loading();
+    setTimeout(()=>{
+      this.$loading['close']()
+    },2000)
+  },
+  methods:{
+    picked:function (res) {
+      this.freeMon = res
+      this.$toast['center'](res,2000)
     }
   },
   components:{

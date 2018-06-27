@@ -3,8 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import vvView from 'vv-vue'
-import '../node_modules/vv-vue/dist/style.css'
+import vvView from '../dist/vv-view.js'
+import '../dist/style.css'
 Vue.use(vvView);
 Vue.config.productionTip = false
 
