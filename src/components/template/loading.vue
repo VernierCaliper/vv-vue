@@ -25,11 +25,11 @@
 
 <script>
     export default {
-        name: "loading"
+      name: "loading"
     }
 </script>
 
-<style scoped>
+<style>
   .AjaxLoading{
     position: fixed;
     width: 100%;

@@ -53,7 +53,7 @@
 //       allChunks: true,
 //     }),
 //     // Compress extracted CSS. We are using this plugin so that possible
-//     // duplicated CSS from different components can be deduped.
+//     // duplicated CSS from different template can be deduped.
 //     new OptimizeCSSPlugin({
 //       cssProcessorOptions: config.build.productionSourceMap
 //         ? { safe: true, map: { inline: false } }
@@ -157,7 +157,7 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = merge(options, {
-  entry: path.resolve(__dirname, '../src/components/entry.js'),
+  entry: path.resolve(__dirname, '../src/template/entry.js'),
   output: {
     filename: 'vv-view.js',
     path: path.resolve(__dirname, '../dist'),

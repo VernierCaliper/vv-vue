@@ -3,7 +3,8 @@
     <div ref="swiperWrap" class="yq_swiper"
          @touchstart="touchStart"
          @touchmove="touchMove"
-         @touchend="touchEnd">
+         @touchend="touchEnd"
+    >
       <slot/>
     </div>
 
@@ -50,10 +51,12 @@
       },
     },
     mounted() {
-      this.init()
+      this.init();
+      console.log(this.options);
     },
     methods: {
       init:function (){
+        this.addDefalutOptions();
         setTimeout(() => {
           this.cloneDom();
           this.dom.transform = `translate3d(${this._width * -this.options.index}px, 0px, 0px)`;
@@ -63,6 +66,30 @@
             this.setTime()
           }
         }, 100)
+      },
+      //配置项中如果未传值，添加默认项
+      addDefalutOptions:function () {
+        if(!this.options.hasOwnProperty('autoplay')){
+          this.options.autoplay = true
+        }
+        if(!this.options.hasOwnProperty('duration')){
+          this.options.duration = 500
+        }
+        if(!this.options.hasOwnProperty('interval')){
+          this.options.interval = 2500
+        }
+        if(!this.options.hasOwnProperty('showPagenation')){
+          this.options.showPagenation = true
+        }
+        if(!this.options.hasOwnProperty('notActiveClass')){
+          this.options.notActiveClass = ''
+        }
+        if(!this.options.hasOwnProperty('activeClass')){
+          this.options.activeClass = 'yq_swiper_active'
+        }
+        if(!this.options.hasOwnProperty('index')){
+          this.options.index = 1
+        }
       },
       touchStart:function (e) {
         if (this.slideing) {
@@ -173,5 +200,5 @@
 </script>
 
 <style>
- @import "../assets/css/swiper.css";
+ @import "../../assets/css/swiper.css";
 </style>

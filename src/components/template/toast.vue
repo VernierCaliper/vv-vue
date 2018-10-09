@@ -18,7 +18,7 @@
     }
 </script>
 
-<style scoped>
+<style>
   @keyframes yequan-fade-in{
     0%{
       opacity: 0;

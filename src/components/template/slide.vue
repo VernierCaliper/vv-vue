@@ -14,5 +14,5 @@
   }
 </script>
 <style>
-  @import "../assets/css/slide.css";
+  @import "../../assets/css/slide.css";
 </style>

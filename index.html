@@ -7,6 +7,24 @@
   </head>
   <body>
     <div id="app"></div>
+
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    (function () {
+      window.erudaIsInit = false;
+      var src = 'http://eruda.liriliri.io/eruda.min.js';
+      if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+      var script = document.createElement('script');
+      script.setAttribute('src',src);
+      document.body.appendChild(script);
+      script.onload = function () {
+        window.erudaIsInit = true;
+        eruda.init()
+      }
+    })()
+
+
+  </script>
+
 </html>

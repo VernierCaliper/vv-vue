@@ -1,22 +1,21 @@
-import swiper from './swiper'
-import slide from './slide'
-import date from './date'
-import toast from './toast'
-import loading from './loading'
-import fold from './fold'
-// import foldHeader from './foldHeader'
-// import foldList from './foldList'
+import swiper from './template/swiper'
+import slide from './template/slide'
+import toast from './template/toast'
+import loading from './template/loading'
+import spinner from './template/spinner'
+import vvSwitch from './template/vvSwitch'
+import actionSheet from './template/actionSheet'
 const install = function (Vue,options) {
   if(install.installed) return;
   //swiper
   Vue.component(swiper.name,swiper);
   Vue.component(slide.name,slide);
-  //月份选择
-  Vue.component(date.name,date);
-  //折叠panel
-  Vue.component(fold.name,fold);
-  // Vue.component(foldHeader.name,foldHeader);
-  // Vue.component(foldList.name,foldList);
+  //spinner
+  Vue.component(spinner.name,spinner);
+  //switch开关
+  Vue.component(vvSwitch.name,vvSwitch);
+  //操作列表
+  Vue.component(actionSheet.name,actionSheet);
   //toast
   {
     let defaultOpt = {
@@ -70,11 +69,6 @@ const install = function (Vue,options) {
       document.body.removeChild(loadingTpl.$el)
     }
   }
-  //折叠panel
-  {
-
-  }
-
 };
 // Vue 是全局变量时，自动 install
 if (typeof window !== 'undefined' && window.Vue) {
@@ -82,7 +76,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 export default{
   install,
-  swiper,
-  slide,
-  date
 }

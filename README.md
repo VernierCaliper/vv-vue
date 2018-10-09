@@ -28,6 +28,8 @@ cnpm install vv-vue --save //淘宝镜像
  <date @selectDate="picked">
 
  </date>
+ //loading动画组件，spinnerColor:loading颜色
+ <spinner :spinner-color="spinnerColor"></spinner>
  ```
  * 3.添加options
  > JavaScript
@@ -72,7 +74,8 @@ cnpm install vv-vue --save //淘宝镜像
         this.freeMon = res
       }
     },
-    //loading动画
+
+    //loading动画方法
       this.$loading()//开启动画
       this.$loading['close']()//关闭动画
     //toast提示框
@@ -88,10 +91,22 @@ cnpm install vv-vue --save //淘宝镜像
     duration number,提示信息消失时间,默认为2500
     
   ```
+  //spinner用法(直接在页面使用的loading)
+  >html
+  ```
+  <spinner :spinnerColor="spinnerColor" :spinnerSize="spinnerSize">
+
+  </spinner>
+  ```
+  >配置项
+  
+  spinnerColor -> loading颜色
+  
+  spinnerSize  &nbsp;&nbsp;-> loading大小(单位：px)
 ### 截图
 
 ![效果](https://s22.postimg.cc/58fehx4a9/20180623135356.png)
 
 ### 当然你也可以直接clone本项目，在本地运行查看
-* 1.npm install //建议使用cnpm安装依赖
+* 1.npm install //建议使用cnpm
 * 2.npm run dev
