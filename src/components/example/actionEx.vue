@@ -3,7 +3,7 @@
     <div class="button-common" @click="actionSheet">
       ACTIONSHEET
     </div>
-    <action-sheet :actionShow="flag" @closeAction="closeAction" @doAction="doActions">
+    <action-sheet :actionShow="flag" :actionList="list" @closeAction="closeAction" @doAction="doActions">
 
     </action-sheet>
   </div>
@@ -14,7 +14,12 @@
     name: "action-ex",
     data() {
       return {
-        flag:false
+        flag:false,
+        list: {
+          reply:'回复',
+          back:'返回',
+          print:'打印',
+        }
       }
     },
     mounted: function () {

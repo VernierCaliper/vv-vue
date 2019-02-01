@@ -50,7 +50,7 @@ export default {
   overflow-y: scroll;
   overflow-x: hidden;
   text-align: center;
-  box-shadow: 2px 2px 20px 1px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.2);
   padding: 0 10px;
   box-sizing: border-box;
 }

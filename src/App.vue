@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <index></index>
+      <index v-if="$route.name !== 'index'"></index>
       <router-view/>
   </div>
 </template>

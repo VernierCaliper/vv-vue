@@ -1,31 +1,43 @@
 <template>
   <div class="AjaxLoading" id="AjaxLoading">
-    <div class="spinner">
+    <div class="spinner" :class="size==='normal'||size==='middle'||size==='big'?'spinner-'+size:'spinner-normal'">
       <div class="spinner-container container1">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
-        <div class="circle4"></div>
+        <div class="circle1" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle2" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle3" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle4" :style="{backgroundColor:spinnerColor}"></div>
       </div>
       <div class="spinner-container container2">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
-        <div class="circle4"></div>
+        <div class="circle1" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle2" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle3" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle4" :style="{backgroundColor:spinnerColor}"></div>
       </div>
       <div class="spinner-container container3">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
-        <div class="circle4"></div>
+        <div class="circle1" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle2" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle3" :style="{backgroundColor:spinnerColor}"></div>
+        <div class="circle4" :style="{backgroundColor:spinnerColor}"></div>
       </div>
     </div>
+    <span class="loading-text" :style="{color:textColor}">{{text}}</span>
   </div>
 </template>
 
 <script>
     export default {
-      name: "loading"
+      name: "loading",
+      data() {
+        return {
+          text:'加载中',
+          textColor:'#409eff',
+          size:'normal',
+          spinnerColor:'#409eff'
+        }
+      },
+      mounted:function () {
+
+      }
     }
 </script>
 
@@ -36,21 +48,48 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.5);
     z-index: 100000;
+    animation: opacity .4s linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  .spinner {
+  @keyframes opacity {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  .loading-text{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+  }
+  .spinner-normal {
     width: 20px;
     height: 20px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -10px 0 0 -10px;
+    position: relative;
+  }
+  .spinner-middle {
+    width: 30px;
+    height: 30px;
+    position: relative;
+  }
+  .spinner-big {
+    width: 40px;
+    height: 40px;
+    position: relative;
   }
   .container1 > div, .container2 > div, .container3 > div {
     width: 6px;
     height: 6px;
-    background-color: #fff;
+    background-color: #409eff;
 
     border-radius: 100%;
     position: absolute;

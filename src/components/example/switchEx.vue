@@ -1,7 +1,16 @@
 <template>
   <div class="switch-ex common">
-    <vv-switch :options="options" @checkend="getFlag" style="margin: 100px auto">
-
+    <vv-switch
+      switchWidth=60
+      switchHeight=30
+      OnColor="#0fc37c"
+      OffColor="#ff4949"
+      switchDuration=400
+      active-text="开"
+      inactive-text="关"
+      v-model="status"
+      @checkend="getFlag"
+      style="margin: 30px auto">
     </vv-switch>
     <div class="switch-result">
       switch组件当前处于
@@ -16,36 +25,39 @@
     name: "switch-ex",
     data() {
       return {
-        res:'打开',
-        options:{
-          Width:60,
-          Height:30,
-          OnColor:'#ffffff',
-          OffColor:'#0fc37c',
-        }
+        res: '打开',
+        status:false,
+        Width: 60,
+        Height: 30,
+        OnColor: '#0fc37c',
+        OffColor: '#ff4949',
+        duration: 400,
       }
     },
     mounted: function () {
 
     },
     methods: {
-      getFlag:function (val) {
-        this.res = val?'打开':'关闭'
+      getFlag: function (val) {
+        console.log(val);
+        this.res = val ? '打开' : '关闭'
       }
     }
   }
 </script>
 
 <style scoped>
-.switch-ex{
-  margin: 0 auto;
-}
-  .switch-result{
+  .switch-ex {
+    margin: 0 auto;
+  }
+
+  .switch-result {
     text-align: center;
     font-size: 16px;
     color: #0fc37c;
   }
-  .switch-result span{
+
+  .switch-result span {
     color: crimson;
     font-weight: bolder;
   }

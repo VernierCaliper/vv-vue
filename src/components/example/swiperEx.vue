@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       options:{
-        // autoplay:false,
+        autoplay:false,
         duration:500,
         interval:2000,
         showPagenation:true,
@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     getIndex:function (index) {
-      console.log(index)
+
     },
   }
 }

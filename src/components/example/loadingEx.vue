@@ -15,9 +15,16 @@
       },
       methods: {
         loadingEx:function () {
-          this.$loading();
+          this.$loading({
+            text:'加载中',
+            textColor:'#409eff',
+            size:'normal',
+            spinnerColor:'#409eff'
+          });
           setTimeout(()=>{
-            this.$loading['close']()
+            this.$loading['close'](()=>{
+              console.log('消失')
+            })
           },2000)
         }
       }

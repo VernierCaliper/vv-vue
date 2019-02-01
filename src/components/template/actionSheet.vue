@@ -2,7 +2,7 @@
   <div class="action-sheet" v-show="selfFlag" @click="checkActionShow">
     <div class="vv-action-sheet" :style="{bottom:selfFlag?'0':'-100%'}">
       <ul>
-        <li v-for="(item,key,index) in actionList" @click="doActions(key)" :aa="key">{{item}}</li>
+        <li v-for="(item,key,index) in actionList" @click="doActions(key)">{{item}}</li>
       </ul>
       <div class="vv-cancel">
         取消

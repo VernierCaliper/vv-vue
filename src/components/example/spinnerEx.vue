@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       spinnerColor:'#0fc37c',
-      spinnerSize:20,
+      spinnerSize:80,
       spinnerIsShow:false,
       index:1
     }

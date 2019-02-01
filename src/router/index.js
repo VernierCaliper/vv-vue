@@ -4,11 +4,14 @@ import index from '@/components/template/index'
 import swiperEx from '@/components/example/swiperEx'
 import loadingEx from '@/components/example/loadingEx'
 import toastEx from '@/components/example/toastEx'
-import actionEx from '@/components/example/actionEx'
+import messageBox from '@/components/example/messageBoxEx'
+// import actionEx from '@/components/example/actionEx'
 import spinnerEx from '@/components/example/spinnerEx'
 import switchEx from '@/components/example/switchEx'
+import touchImgEx from '@/components/example/touchImgEx'
+import sliderEx from '@/components/example/sliderEx'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -33,6 +36,11 @@ export default new Router({
       component: toastEx
     },
     {
+      path: '/messageBox',
+      name: 'messageBox',
+      component: messageBox
+    },
+    {
       path: '/spinnerEx',
       name: 'spinnerEx',
       component: spinnerEx
@@ -42,10 +50,20 @@ export default new Router({
       name: 'switchEx',
       component: switchEx
     },
+    // {
+    //   path: '/actionEx',
+    //   name: 'actionEx',
+    //   component: actionEx
+    // },
     {
-      path: '/actionEx',
-      name: 'actionEx',
-      component: actionEx
+      path: '/touchImgEx',
+      name: 'touchImgEx',
+      component: touchImgEx
+    },
+    {
+      path: '/sliderEx',
+      name: 'sliderEx',
+      component: sliderEx
     }
   ]
 })

@@ -52,7 +52,6 @@
     },
     mounted() {
       this.init();
-      console.log(this.options);
     },
     methods: {
       init:function (){
