@@ -1,5 +1,5 @@
 # vv-view
-### 目前有swiper轮播组件、月份选择、loading加载动画、toast提示信息组件、messageBox确认取消弹窗、switch开关、slide滑块等，将会持续更新各种常用组件
+### 目前有swiper轮播组件、月份选择、loading加载动画、toast提示信息组件、messageBox确认取消弹窗、switch开关、slide滑块等，将会持续更新各种常用组件，部分功能暂未推到npm，后期组件多一些再推
 ## 安装
 npm install vv-vue --save
 
@@ -122,6 +122,7 @@ cnpm install vv-vue --save //淘宝镜像
     </vv-slider>
   ```
   >注意
+  
   1.绑定的res值，不要小于min，或者大于max
   
   2.bar-color和dots-color如果只设置一个选项，则两者共用同一颜色，当然也可以分开传入不同颜色（如果你觉得好看的话，这样的需求应该不太可能，但我还是保留了可分开配置不同颜色的功能，万一呢...）
