@@ -1,14 +1,14 @@
 <template>
   <div class="slider" ref="slider" :style="{width:width+'px',height:height+'px',backgroundColor:trackColor}">
     <input type="number" @input="process" class="vv-slide-input">
-    <div class="slider-bar" :style="{width:start+'%',backgroundColor:barColor}"></div>
+    <div class="slider-bar" :style="{width:start+'%',backgroundColor:showBarColor}"></div>
     <div class="slider-dot"
           :style="{left:start+'%'}"
           @touchstart="moverStart"
           @touchmove="slide"
           @touchend="slideEnd"
     >
-      <span :style="{border: '2px solid '+dotsColor}"></span>
+      <span :style="{border: '2px solid '+showDotsColor}"></span>
       <div :class="{isShow:showRes}">{{res}}</div>
     </div>
   </div>
@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    name: "slider",
+    name: "vvSlider",
     data() {
       return {
         start:0,
@@ -24,7 +24,9 @@
         sliderPositionX:0,
         moveStartX:0,
         res:0,
-        showRes:false
+        showRes:false,
+        showBarColor:'',
+        showDotsColor:'',
       }
     },
     model: {
@@ -34,7 +36,10 @@
     props:{
       process:{
         default:0,
-        type:Number
+        type:Number,
+        validator:function (value) {
+          return value >= 0 && value <= 100
+        }
       },
       width:{
         default:200,
@@ -58,11 +63,17 @@
       },
       min:{
         default:0,
-        type:Number
+        type:Number,
+        validator:function (value) {
+          return value >= 0 && value < 100
+        }
       },
       max:{
         default:100,
-        type:Number
+        type:Number,
+        validator:function (value) {
+          return value > 0 && value <= 100
+        }
       },
     },
     mounted: function () {
@@ -74,12 +85,17 @@
         this.start = this.process;
         this.res = this.process;
         if(this.dotsColor === 'no' && this.barColor === 'no'){
-          this.dotsColor = '#42b983';
-          this.barColor = '#42b983';
+          this.showDotsColor = '#42b983';
+          this.showBarColor = '#42b983';
         }else if(this.dotsColor === 'no' && this.barColor !== 'no'){
-          this.dotsColor = this.barColor;
+          this.showDotsColor = this.barColor;
+          this.showBarColor = this.barColor;
         }else if(this.dotsColor !== 'no' && this.barColor === 'no'){
-          this.barColor = this.dotsColor;
+          this.showBarColor = this.dotsColor;
+          this.showDotsColor = this.dotsColor;
+        }else {
+          this.showBarColor = this.barColor;
+          this.showDotsColor = this.dotsColor;
         }
       },
       moverStart:function (e) {

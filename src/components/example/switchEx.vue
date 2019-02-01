@@ -9,7 +9,6 @@
       active-text="开"
       inactive-text="关"
       v-model="status"
-      @checkend="getFlag"
       style="margin: 30px auto">
     </vv-switch>
     <div class="switch-result">

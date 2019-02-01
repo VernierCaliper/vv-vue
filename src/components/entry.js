@@ -6,7 +6,7 @@ import loading from './template/loading'
 import spinner from './template/spinner'
 import vvSwitch from './template/vvSwitch'
 import actionSheet from './template/actionSheet'
-import slider from './template/slider'
+import vvSlider from './template/slider'
 import '@/assets/css/touchimg.css'
 const install = function (Vue,options) {
   if(install.installed) return;
@@ -20,7 +20,7 @@ const install = function (Vue,options) {
   //操作列表
   Vue.component(actionSheet.name,actionSheet);
   //滑块
-  Vue.component(slider.name,slider);
+  Vue.component(vvSlider.name,vvSlider);
   //toast
   {
     let defaultOpt = {

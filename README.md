@@ -62,18 +62,6 @@ cnpm install vv-vue --save //淘宝镜像
         },
       }
       }
-  //月份选择
-    data () {
-      return {
-        freeMon:''
-        }
-      },
-    methods:{
-      picked:function (res) {
-        //res为返回的所选择的日期
-        this.freeMon = res
-      }
-    },
 
     //loading动画方法
       this.$loading()//开启动画
@@ -83,15 +71,15 @@ cnpm install vv-vue --save //淘宝镜像
     this.$toast('message') //默认显示位置为center
     或者
     this.$toast[type]('message',duration)
-    type string,控制toast提示显示位置，默认为'center'
+    其中type为string,控制toast提示显示位置，默认为'center'，有三个可选值
     type->'top'显示在顶部
     type->'center'显示在中央
     type->'bottom'显示在底部
     
-    duration number,提示信息消失时间,默认为2500
+    duration为number,提示信息消失时间,默认为2500
     
   ```
-  //spinner用法(直接在页面使用的loading)
+  //spinner用法(相当于直接在页面中任何位置使用的loading)
   >html
   ```
   <spinner :spinnerColor="spinnerColor" :spinnerSize="spinnerSize">
@@ -102,11 +90,45 @@ cnpm install vv-vue --save //淘宝镜像
   
   spinnerColor -> loading颜色
   
-  spinnerSize  &nbsp;&nbsp;-> loading大小(单位：px)
+  spinnerSize  &nbsp;&nbsp;-> loading大小(单位：px，默认20px)
+  
+  //switch用法
+  >html
+  ```
+    <vv-switch
+        switchWidth=60
+        switchHeight=30
+        OnColor="#0fc37c"
+        OffColor="#ff4949"
+        switchDuration=400
+        active-text="开"
+        inactive-text="关"
+        v-model="status"
+    >
+    </vv-switch>
+  ```
+  //slider用法
+  >html
+  ```
+    <vv-slider
+               :width="200"
+               :height="6"
+               :trackColor="'#e4e7ed'"
+               :bar-color="'red'"
+               :dots-color="'red'"
+               :min="20"
+               :max="80"
+               v-model="res">
+    </vv-slider>
+  ```
+  >注意
+  1.绑定的res值，不要小于min，或者大于max
+  2.bar-color和dots-color如果只设置一个选项，则两者共用同一颜色，当然也可以分开传入（如果您觉得好看的话）
+  
+
+  
 ### 截图
 
-![效果](https://s22.postimg.cc/58fehx4a9/20180623135356.png)
-
-### 当然你也可以直接clone本项目，在本地运行查看
-* 1.npm install //建议使用cnpm
+### 当然你也可以直接clone本项目，在本地运行查看，工程中的example目录即是调用各个组件的示例
+* 1.npm install //建议安装使用cnpm
 * 2.npm run dev

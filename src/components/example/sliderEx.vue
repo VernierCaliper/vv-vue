@@ -1,8 +1,15 @@
 <template>
   <div class="slider-ex common">
-    <slider style="margin: 50px auto" v-model="res">
-
-    </slider>
+    <vv-slider style="margin: 50px auto"
+               :width="200"
+               :height="6"
+               :trackColor="'#e4e7ed'"
+               :bar-color="'red'"
+               :dots-color="'red'"
+               :min="20"
+               :max="80"
+               v-model="res">
+    </vv-slider>
   </div>
 </template>
 
@@ -11,7 +18,7 @@
     name: "slider-ex",
     data() {
       return {
-        res:0
+        res:20
       }
     },
     mounted: function () {
