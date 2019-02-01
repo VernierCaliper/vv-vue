@@ -1,5 +1,5 @@
 # vv-view
-### 目前有swiper轮播组件、月份选择、loading加载动画、toast提示信息组件，将会持续更新各种常用组件
+### 目前有swiper轮播组件、月份选择、loading加载动画、toast提示信息组件、messageBox确认取消弹窗、switch开关、slide滑块等，将会持续更新各种常用组件
 ## 安装
 npm install vv-vue --save
 
